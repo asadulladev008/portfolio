@@ -1,0 +1,126 @@
+/* IN style.css file fonst  */
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+/* IN styles  */
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-transform: capitalize;
+}
+/* IN css body styles */
+body {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 70px;
+  background-image: url(./assets/img/back6.jpg);
+  object-fit: cover;
+  overflow-y: hidden;
+}
+/* IN css container class styles */
+.container {
+  position: relative;
+  perspective: 1000px;
+}
+/* IN css slide class style  */
+.container .slide-container .slide {
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0px 5px 20px #3337;
+  width: 750px;
+  padding: 40px;
+  margin: 140px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: slide 0.4s linear;
+  opacity: 0.9;
+}
+
+.container .slide-container .slide > * {
+  animation: slideContent 0.5s linear backwards;
+}
+.container .slide-container .slide .icon {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 90px;
+  color: #3498db;
+}
+.container .slide-container .slide .user {
+  display: flex;
+  align-items: center;
+}
+.container .slide-container .slide img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+.container .slide-container .slide .user .user_infos h3 {
+  color: black;
+  font-size: 40px;
+}
+.container .slide-container .slide .user .user_infos .starts i {
+  color: #3498db;
+  font-size: 25px;
+}
+.text {
+  color: #333;
+  font-size: 18px;
+  padding: 20px;
+  margin-top: 30px;
+  letter-spacing: 2px;
+  font-style: italic;
+  width: 650px;
+  margin-left: 20px;
+}
+.container .slide-container {
+  display: none;
+}
+.container .slide-container.active {
+  display: block;
+}
+.container #next,
+.container #prev {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 70px;
+  width: 70px;
+  line-height: 70px;
+  text-align: center;
+  font-size: 25px;
+  background: #fff;
+  color: #333;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 5px 10px #333;
+}
+.container #next {
+  right: -50px;
+}
+.container #prev {
+  left: -50px;
+}
+.container #next:hover,
+.container #prev:hover {
+  background-color: #fff;
+  color: #fff;
+}
+
+/* animation  */
+@keyframes slide {
+  0% {
+    transform: rotateX(180deg);
+  }
+}
+@keyframes slideContent {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
